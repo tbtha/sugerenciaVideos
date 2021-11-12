@@ -25,19 +25,28 @@ class Reproductor extends Multimedia{
     }
 }
 //intanciando
-const iframeM = document.querySelector("#musica")
-const musica1 = new Reproductor ("https://www.youtube.com/embed/M1N_wbhAfQ4" , iframeM)
+
 
 const iffe = (() => {
     return {
         mostrarIframe(url,iframe){
-            iframe.setAttribute('scr',url)
+            iframe.setAttribute('src',url)
         },
         agregarInicio(url,iframe,tiempo){
             iframe.setAttribute('src' , `${url}?start=${tiempo}`)
         }
     }
 })();
+const iframeM = document.querySelector("#musica")
+const musica1 = new Reproductor ("https://www.youtube.com/embed/WqWlGr10t-g" , iframeM)
+// musica1.setInicio(5)
+musica1.playMultimedia()
 
-musica1.setInicio(1)
 
+// const iframeP = document.querySelector("#peliculas")
+const pelicula1 = new Reproductor ("https://www.youtube.com/embed/v1EkoQV4g5c" , document.querySelector("#peliculas"))
+pelicula1.setInicio(15)
+
+const iframeS = document.querySelector("#series")
+const serie1 = new Reproductor ("https://www.youtube.com/embed/s_mVlR6N5q8" , iframeS)
+serie1.setInicio(54)
